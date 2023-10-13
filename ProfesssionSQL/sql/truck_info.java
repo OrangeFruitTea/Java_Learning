@@ -2,6 +2,8 @@ package sql;
 
 import com.sun.org.apache.xpath.internal.objects.XString;
 
+import java.util.Arrays;
+
 public class truck_info {
     private int _truckId;
     private StorageTypes _storageType;
@@ -35,8 +37,8 @@ public class truck_info {
     public StorageTypes get_storageType() {
         return _storageType;
     }
-    public char[] get_usingRange() {
-        return _usingRange;
+    public String get_usingRange() {
+        return Arrays.toString(_usingRange);
     }
     public double get_netWeight() {
         return _netWeight;
@@ -89,6 +91,22 @@ public class truck_info {
     public void set_sizeWidth(double _sizeWidth) {
         this._sizeWidth = _sizeWidth;
     }
+
+    @Override
+    public String toString() {
+        return "TruckInfo{" +
+                "truckId = " + _truckId +
+                ", storageType = " + _storageType +
+                ", usingRange = '" + Arrays.toString(_usingRange) + '\'' +
+                ", netWeight = " + _netWeight + "Tons" +
+                ", sizeLength = " + _sizeLength + "m" +
+                ", sizeWidth = " + _sizeWidth + "m" +
+                ", sizeHeight = " + _sizeHeight + "m" +
+                ", maxLoadWeight = " + _maxLoadWeight + "Tons" +
+                ", maxLoadVolume = " + _maxLoadVolume + "m^3" +
+                "}";
+    }
+
 
 
 }
